@@ -9,6 +9,11 @@ from fastapi import FastAPI, HTTPException
 
 apiX = FastAPI() # 
 
+@apiX.post("/")
+async def home():
+    return print({"Bienvenido a su cajero automatico"})
+
+
 #async ihndica que se ejecuta cuando se nececita, o se ejecuta paralelamente con otro proceso.
 @apiX.post("/user/auth/")
 async def auth_user(user_in: UserIn):
