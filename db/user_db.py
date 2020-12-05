@@ -1,4 +1,4 @@
-from typing import  Dict
+from typing import Dict
 from pydantic import BaseModel
 
 class UserInDB(BaseModel):
@@ -10,12 +10,11 @@ database_users = Dict[str, UserInDB]
 
 database_users = {
     "camilo24": UserInDB(**{"username":"camilo24",
-                            "password":"root",
-                            "balance":12000}),
-
+    "password": "root",
+    "balance": 12000}),
     "andres18": UserInDB(**{"username":"andres18",
-                            "password":"hola",
-                            "balance":34000}),
+    "password": "hola",
+    "balance": 34000}),
 }
 
 def get_user(username: str):

@@ -9,10 +9,9 @@ from fastapi import FastAPI, HTTPException
 
 apiX = FastAPI() # 
 
-@apiX.post("/")
+@apiX.get("/")
 async def home():
-    return print({"Bienvenido a su cajero automatico"})
-
+    return {"message": "Bienvenido a cajero automatico"}
 
 #async ihndica que se ejecuta cuando se nececita, o se ejecuta paralelamente con otro proceso.
 @apiX.post("/user/auth/")
@@ -62,3 +61,4 @@ async def make_transaction(transaction_in: TransactionIn):
     transaction_out = TransactionOut(**transaction_in_db.dict())
 
     return  transaction_out
+
